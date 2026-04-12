@@ -469,6 +469,52 @@
       color: var(--rose-deep);
     }
 
+    .project-stack {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .project-card {
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255, 250, 251, 0.96), rgba(246, 239, 241, 0.9));
+      border: 1px solid rgba(174, 104, 114, 0.09);
+    }
+
+    .project-card strong {
+      display: block;
+      color: var(--text);
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: var(--text-soft);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(217, 137, 151, 0.1);
+      color: var(--rose-deep);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -715,12 +761,35 @@
                 identify pipeline bottlenecks and implement efficient solutions.
               </p>
               <div class="project-label">Selected Projects</div>
-              <ul>
-                <li>Built Houdini tools and procedural workflows to support demanding advertising timelines.</li>
-                <li>Collaborated with artists and developers to identify bottlenecks and improve workflow efficiency.</li>
-                <li>Contributed to lighting workflows in Houdini Solaris with a focus on USD integration and scene optimization.</li>
-                <li>Set up and managed render farm processes using Deadline and TOPs, including automated render submission, resource allocation, and troubleshooting for on-time delivery.</li>
-              </ul>
+              <div class="project-stack">
+                <div class="project-card">
+                  <strong>Houdini pipeline tooling for high-speed advertising delivery</strong>
+                  <p>Built procedural Houdini tools and workflow improvements for multiple productions, helping artists move faster while reducing friction between creative and technical teams.</p>
+                  <div class="tag-row">
+                    <span class="tag">Houdini</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Pipeline</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <strong>Solaris and USD lighting workflow support</strong>
+                  <p>Contributed to lighting workflows in Houdini Solaris with a focus on scene optimization, USD integration, and smoother handoff between departments.</p>
+                  <div class="tag-row">
+                    <span class="tag">Solaris</span>
+                    <span class="tag">USD</span>
+                    <span class="tag">Lighting</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <strong>Render orchestration with Deadline and TOPs</strong>
+                  <p>Managed automated render submission, troubleshooting, and resource allocation through Deadline and TOPs to help teams deliver work on schedule.</p>
+                  <div class="tag-row">
+                    <span class="tag">Deadline</span>
+                    <span class="tag">TOPs</span>
+                    <span class="tag">Automation</span>
+                  </div>
+                </div>
+              </div>
             </article>
 
             <article class="timeline-item">
@@ -736,14 +805,58 @@
                 and Surfacing in an advanced USD and Solaris pipeline.
               </p>
               <div class="project-label">Selected Projects</div>
-              <ul>
-                <li>Implemented a Houdini TOP Python custom scheduler to submit and handle PDG jobs on the Animal Logic custom farm, including work items, dependencies, batching, scheduler callbacks, and new farm features to support PDG logic.</li>
-                <li>Developed a machine learning muscle deformer for CharFX workflows using PDG and ONNX in Houdini 20, creating a custom virtual environment and HDA to wrap logic that outputs linear blend skinning from muscle and bone inputs.</li>
-                <li>Built a Texture Library Input/Output SOP HDA using COPS, ROPS, TOPS, and VEX to save custom masks as texture files from Houdini attributes or groups into a global library, with import support from the library UI.</li>
-                <li>Created a Contact Sheet Generator ROP HDA to generate line-up renders for reviews from database review inputs or files on disk, outputting a new review with comments and tile-level details.</li>
-                <li>Implemented unit tests for FX workflows triggered during platform updates and tool releases by launching Houdini sessions, creating nodes, cooking them, and checking errors through Python and HOM.</li>
-                <li>Provided ongoing support for SOP, LOP, ROP, and TOP workflows plus custom Python tooling including turntable renders, creation of shots and assets, resolver tooling, knitting, groom tools, and other proprietary Animal Logic tools.</li>
-              </ul>
+              <div class="project-stack">
+                <div class="project-card">
+                  <strong>Houdini TOP Python Custom Scheduler for the Animal Logic farm</strong>
+                  <p>Implemented a custom PDG scheduler to submit and manage jobs on the studio farm, handling work items, dependencies, batching, scheduler callbacks, and farm-side support for PDG logic.</p>
+                  <div class="tag-row">
+                    <span class="tag">Houdini</span>
+                    <span class="tag">PDG</span>
+                    <span class="tag">TOPs</span>
+                    <span class="tag">Python</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <strong>Machine learning muscle deformer for CharFX</strong>
+                  <p>Developed a Houdini 20 workflow using PDG and ONNX to wrap muscle and bone logic into a custom environment and HDA that outputs linear blend skinning for character workflows.</p>
+                  <div class="tag-row">
+                    <span class="tag">CharFX</span>
+                    <span class="tag">ONNX</span>
+                    <span class="tag">PDG</span>
+                    <span class="tag">Houdini 20</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <strong>Texture Library Input/Output HDA</strong>
+                  <p>Built a SOP HDA with COPS, ROPS, TOPS, and VEX to convert Houdini attributes or groups into texture assets for a global library, with import support directly from the UI.</p>
+                  <div class="tag-row">
+                    <span class="tag">COPS</span>
+                    <span class="tag">ROPS</span>
+                    <span class="tag">TOPS</span>
+                    <span class="tag">VEX</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <strong>Contact Sheet Generator for review workflows</strong>
+                  <p>Created a ROP HDA that turns review inputs or files on disk into line-up renders with comments and tile-level review context for faster approvals.</p>
+                  <div class="tag-row">
+                    <span class="tag">ROP HDA</span>
+                    <span class="tag">Review Tools</span>
+                    <span class="tag">Automation</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <strong>Platform update tests and artist tool support</strong>
+                  <p>Implemented HOM and Python-based tests for FX workflows and provided ongoing support for SOP, LOP, ROP, and TOP tooling, including turntables, resolvers, knitting, groom tools, and other proprietary workflows.</p>
+                  <div class="tag-row">
+                    <span class="tag">HOM</span>
+                    <span class="tag">SOP</span>
+                    <span class="tag">LOP</span>
+                    <span class="tag">ROP</span>
+                    <span class="tag">TOP</span>
+                  </div>
+                </div>
+              </div>
             </article>
 
             <article class="timeline-item">
@@ -759,11 +872,35 @@
                 mainly using Maya and proprietary tools in an advanced USD-based pipeline integrated with a custom database.
               </p>
               <div class="project-label">Selected Projects</div>
-              <ul>
-                <li>Automated the load of character poses when building shots in Maya using Animal Logic production tools.</li>
-                <li>Set up a new USD entity for Layout workflows, including changes to the USD asset resolver and triggers used when creating assets and shots.</li>
-                <li>Provided ongoing support for show workflows including shot creation and review tools across proprietary systems.</li>
-              </ul>
+              <div class="project-stack">
+                <div class="project-card">
+                  <strong>Automated character pose loading in Maya</strong>
+                  <p>Built tools to automate pose loading during shot build workflows, reducing repetitive setup work for production teams.</p>
+                  <div class="tag-row">
+                    <span class="tag">Maya</span>
+                    <span class="tag">Animation</span>
+                    <span class="tag">Tooling</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <strong>USD entity setup for layout workflows</strong>
+                  <p>Changed the USD asset resolver and related triggers to support new entity creation for layout, assets, and shot workflows.</p>
+                  <div class="tag-row">
+                    <span class="tag">USD</span>
+                    <span class="tag">Layout</span>
+                    <span class="tag">Pipeline</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <strong>Show support across proprietary tools</strong>
+                  <p>Supported shot creation, review tooling, and daily production workflows across animation and editorial teams using internal systems.</p>
+                  <div class="tag-row">
+                    <span class="tag">Editorial</span>
+                    <span class="tag">Shot Creation</span>
+                    <span class="tag">Support</span>
+                  </div>
+                </div>
+              </div>
             </article>
 
             <article class="timeline-item">
@@ -779,15 +916,36 @@
                 Worked across Nuke, ShotGrid publishing systems, Deadline, Maya, and Houdini inside a VFX production environment.
               </p>
               <div class="project-label">Selected Projects</div>
-              <ul>
-                <li>Built an on-set ingest tool using PySide and Deadline.</li>
-                <li>Created custom Nuke nodes and ShotGrid publishing tools for the DMP pipeline workflow.</li>
-                <li>Developed Deadline automations through custom events to improve farm scheduling and the use of resources.</li>
-                <li>Supported the transition from ShotGrid Config1 to Config2.</li>
-                <li>Implemented ShotGrid publish hooks for Maya, Nuke, and Houdini.</li>
-                <li>Built custom Nuke nodes and tools for comp artists and the editorial team.</li>
-                <li>Contributed to USD, PDG, and ShotGrid publishing workflows in Houdini.</li>
-              </ul>
+              <div class="project-stack">
+                <div class="project-card">
+                  <strong>On-set ingest tool with PySide and Deadline</strong>
+                  <p>Built a production ingest tool to streamline on-set intake and improve early-stage media flow into the pipeline.</p>
+                  <div class="tag-row">
+                    <span class="tag">PySide</span>
+                    <span class="tag">Deadline</span>
+                    <span class="tag">Ingest</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <strong>Nuke nodes and ShotGrid publishing for DMP</strong>
+                  <p>Created custom Nuke nodes and publishing hooks to support the DMP pipeline and improve consistency for artists and editorial teams.</p>
+                  <div class="tag-row">
+                    <span class="tag">Nuke</span>
+                    <span class="tag">ShotGrid</span>
+                    <span class="tag">Publishing</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <strong>Farm automation and pipeline transitions</strong>
+                  <p>Developed Deadline event automations, supported the ShotGrid Config1 to Config2 transition, and contributed to USD, PDG, and ShotGrid publishing workflows in Houdini.</p>
+                  <div class="tag-row">
+                    <span class="tag">Deadline</span>
+                    <span class="tag">USD</span>
+                    <span class="tag">PDG</span>
+                    <span class="tag">Houdini</span>
+                  </div>
+                </div>
+              </div>
             </article>
 
             <article class="timeline-item">
@@ -803,14 +961,26 @@
                 artists and the tech department, trained new wranglers, and automated repetitive tasks through scripts.
               </p>
               <div class="project-label">Key Contributions</div>
-              <ul>
-                <li>Troubleshooted technical daily errors with artists and the tech department.</li>
-                <li>Trained and led part-time wranglers.</li>
-                <li>Automated repetitive farm tasks through Python custom scripts to improve rendering workflows.</li>
-                <li>Tested and optimized the performance of the render farm.</li>
-                <li>Collaborated with pipeline teams to create new tools and improve existing workflows.</li>
-                <li>Contributed to 3D software development alongside production support.</li>
-              </ul>
+              <div class="project-stack">
+                <div class="project-card">
+                  <strong>Render farm support and optimization</strong>
+                  <p>Managed render farm usage in Deadline, resolved technical issues with artists and tech teams, and tested farm performance to improve reliability.</p>
+                  <div class="tag-row">
+                    <span class="tag">Deadline</span>
+                    <span class="tag">Render Farm</span>
+                    <span class="tag">Optimization</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <strong>Wrangler leadership and workflow automation</strong>
+                  <p>Trained and led part-time wranglers while building Python scripts to automate repetitive tasks and improve rendering workflows.</p>
+                  <div class="tag-row">
+                    <span class="tag">Python</span>
+                    <span class="tag">Leadership</span>
+                    <span class="tag">Automation</span>
+                  </div>
+                </div>
+              </div>
             </article>
 
             <article class="timeline-item">
