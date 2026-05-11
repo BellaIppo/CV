@@ -1,1063 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Isabella Ippolito | CV</title>
-  <style>
-    :root {
-      --bg: #fbf4ea;
-      --surface: rgba(255, 255, 255, 0.82);
-      --surface-strong: #fffdf9;
-      --text: #231f20;
-      --text-soft: #6a5d52;
-      --line: rgba(196, 96, 52, 0.16);
-      --rose: #e67e3f;
-      --rose-deep: #b94e1e;
-      --rose-soft: #f6d9b8;
-      --peach: #f2c14e;
-      --shadow: 0 24px 70px rgba(138, 84, 44, 0.12);
-      --max: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Avenir Next", "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(246, 217, 184, 0.78), transparent 24%),
-        radial-gradient(circle at 85% 18%, rgba(242, 193, 78, 0.28), transparent 20%),
-        linear-gradient(180deg, #fffdf9 0%, var(--bg) 52%, #f8efe3 100%);
-      overflow-x: hidden;
-    }
-
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    body::before {
-      background:
-        radial-gradient(circle at 8% 16%, rgba(230, 126, 63, 0.1), transparent 16%),
-        radial-gradient(circle at 92% 82%, rgba(242, 193, 78, 0.12), transparent 14%);
-      filter: blur(16px);
-    }
-
-    body::after {
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
-      background-size: 40px 40px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), transparent 75%);
-      opacity: 0.45;
-    }
-
-    .page {
-      position: relative;
-      z-index: 1;
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 22px 18px 70px;
-      display: grid;
-      grid-template-columns: 220px minmax(0, 1fr);
-      gap: 22px;
-      align-items: start;
-    }
-
-    .chapter-nav {
-      position: sticky;
-      top: 18px;
-      padding: 18px;
-      border-radius: 28px;
-      border: 1px solid rgba(255, 255, 255, 0.76);
-      background: rgba(255, 251, 246, 0.76);
-      backdrop-filter: blur(16px);
-      box-shadow: var(--shadow);
-    }
-
-    .chapter-nav h2 {
-      font-family: "Iowan Old Style", "Palatino Linotype", serif;
-      font-size: 28px;
-      margin: 8px 0 14px;
-    }
-
-    .chapter-name {
-      font-size: 34px;
-      line-height: 0.94;
-      margin: 10px 0 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .chapter-role {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      padding: 9px 14px;
-      margin-bottom: 12px;
-      border-radius: 999px;
-      background: rgba(230, 126, 63, 0.1);
-      color: var(--rose-deep);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .chapter-nav p,
-    .chapter-link {
-      color: var(--text-soft);
-      line-height: 1.6;
-    }
-
-    .chapter-links {
-      display: grid;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .chapter-link {
-      display: block;
-      text-decoration: none;
-      padding: 10px 12px;
-      border-radius: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 11px;
-    }
-
-    .chapter-link:hover {
-      background: rgba(230, 126, 63, 0.08);
-      color: var(--text);
-    }
-
-    .main-column {
-      min-width: 0;
-    }
-
-    .frame {
-      border: 1px solid rgba(255, 255, 255, 0.76);
-      background: rgba(255, 251, 246, 0.74);
-      backdrop-filter: blur(18px);
-      box-shadow: var(--shadow);
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      border-radius: 36px;
-      padding: 34px;
-      margin-bottom: 22px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 22px;
-      align-items: stretch;
-      min-height: 0;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      left: -8%;
-      top: -18%;
-      width: 70%;
-      height: 52%;
-      background: linear-gradient(135deg, var(--rose-deep), #d96a2b);
-      clip-path: polygon(0 0, 100% 0, 62% 100%, 0 100%);
-      opacity: 0.9;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -90px;
-      bottom: -90px;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(242, 193, 78, 0.18), transparent 70%);
-    }
-
-    .hero-right {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      gap: 18px;
-      max-width: 860px;
-      align-content: start;
-    }
-
-    .bio-card,
-    .stat-row,
-    .section,
-    .contact-card {
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid var(--line);
-      box-shadow: 0 20px 46px rgba(138, 84, 44, 0.08);
-    }
-
-    .bio-card {
-      padding: 28px;
-    }
-
-    .bio-card p {
-      color: var(--text-soft);
-      line-height: 1.85;
-      font-size: 17px;
-    }
-
-    .stat-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      padding: 16px;
-    }
-
-    .stat {
-      padding: 16px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(255, 250, 244, 0.96), rgba(248, 238, 222, 0.88));
-      border: 1px solid rgba(196, 96, 52, 0.08);
-      text-align: center;
-    }
-
-    .stat strong {
-      display: block;
-      font-family: "Iowan Old Style", "Palatino Linotype", serif;
-      font-size: 30px;
-      color: var(--rose-deep);
-      margin-bottom: 4px;
-    }
-
-    .stat span {
-      color: var(--text-soft);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 22px;
-    }
-
-    .sidebar {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-      align-self: start;
-      position: static;
-    }
-
-    .section {
-      padding: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .section::after {
-      content: "";
-      position: absolute;
-      right: -26px;
-      bottom: -34px;
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(246, 217, 184, 0.28), transparent 70%);
-      pointer-events: none;
-    }
-
-    .content {
-      display: grid;
-      gap: 22px;
-    }
-
-    .section-title {
-      position: relative;
-      display: inline-block;
-      font-family: "Iowan Old Style", "Palatino Linotype", serif;
-      font-size: 26px;
-      margin-bottom: 16px;
-      z-index: 1;
-    }
-
-    .section-title::after {
-      content: "";
-      position: absolute;
-      left: -6px;
-      right: -12px;
-      bottom: 2px;
-      height: 12px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(242, 193, 78, 0.92), rgba(246, 217, 184, 0.86));
-      z-index: -1;
-      transform: rotate(-2deg);
-    }
-
-    .skill-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 22px;
-    }
-
-    .skill-group h4 {
-      color: var(--rose-deep);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 10px;
-    }
-
-    .skill-group ul,
-    .contact-list,
-    .award-list,
-    .cert-list,
-    .volunteer-list {
-      list-style: none;
-      display: grid;
-      gap: 8px;
-    }
-
-    .skill-group li,
-    .contact-list li,
-    .award-list li,
-    .cert-list li,
-    .volunteer-list li,
-    .summary-list li {
-      color: var(--text-soft);
-      line-height: 1.7;
-    }
-
-    .summary-list {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-
-    .summary-list li::before,
-    .award-list li::before,
-    .cert-list li::before,
-    .volunteer-list li::before {
-      content: "- ";
-      color: var(--rose-deep);
-      font-weight: 700;
-    }
-
-    .award-list li::before,
-    .cert-list li::before {
-      content: "";
-    }
-
-    .education-card strong,
-    .contact-list strong,
-    .timeline-item h3,
-    .mini-card h3 {
-      color: var(--text);
-    }
-
-    .education-card p,
-    .contact-list span,
-    .timeline-item p,
-    .mini-card p {
-      color: var(--text-soft);
-      line-height: 1.7;
-    }
-
-    .education-card strong {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--rose-deep);
-    }
-
-    .contact-list a {
-      color: inherit;
-    }
-
-    .education-card a {
-      color: var(--rose-deep);
-    }
-
-    .timeline {
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding: 22px 22px 20px 26px;
-      border-radius: 26px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(250, 243, 236, 0.84));
-      border: 1px solid rgba(196, 96, 52, 0.1);
-      box-shadow: 0 16px 36px rgba(138, 84, 44, 0.08);
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 18px;
-      bottom: 18px;
-      width: 6px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, var(--rose), var(--peach));
-    }
-
-    .timeline-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: flex-start;
-      margin-bottom: 10px;
-    }
-
-    .timeline-item h3 {
-      font-family: "Iowan Old Style", "Palatino Linotype", serif;
-      font-size: 28px;
-      line-height: 1.1;
-      margin-bottom: 8px;
-    }
-
-    .timeline-role {
-      color: var(--text-soft);
-      font-size: 14px;
-      letter-spacing: 0.02em;
-      font-weight: 600;
-    }
-
-    .timeline-date {
-      flex: 0 0 auto;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(246, 217, 184, 0.62);
-      color: var(--rose-deep);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .timeline-item ul {
-      list-style: none;
-      display: grid;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .project-label {
-      margin-top: 14px;
-      margin-bottom: 6px;
-      color: var(--rose-deep);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .timeline-item li::before {
-      content: "- ";
-      color: var(--rose-deep);
-    }
-
-    .project-stack {
-      display: grid;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .project-card {
-      padding: 16px 18px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(255, 251, 246, 0.96), rgba(248, 241, 232, 0.9));
-      border: 1px solid rgba(196, 96, 52, 0.09);
-    }
-
-    .project-card strong {
-      display: block;
-      color: var(--text);
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
-
-    .project-card p {
-      margin: 0;
-      color: var(--text-soft);
-      line-height: 1.7;
-      font-size: 14px;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(230, 126, 63, 0.1);
-      color: var(--rose-deep);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .mini-card {
-      padding: 22px;
-      border-radius: 28px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(249, 243, 235, 0.82));
-      border: 1px solid rgba(196, 96, 52, 0.1);
-      box-shadow: 0 16px 34px rgba(138, 84, 44, 0.08);
-    }
-
-    .mini-card h3 {
-      font-family: "Iowan Old Style", "Palatino Linotype", serif;
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    .cert-list strong,
-    .award-list strong {
-      color: var(--text);
-    }
-
-    .decor {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .square {
-      position: absolute;
-      border: 2px solid rgba(242, 193, 78, 0.72);
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.16);
-    }
-
-    .square.s1 { width: 18px; height: 18px; top: 40px; left: 78px; }
-    .square.s2 { width: 28px; height: 28px; top: 120px; right: 86px; }
-    .square.s3 { width: 14px; height: 14px; top: 320px; right: 38px; }
-    .square.s4 { width: 34px; height: 34px; bottom: 210px; left: 18px; }
-    .square.s5 { width: 16px; height: 16px; bottom: 128px; right: 110px; }
-    .square.s6 { width: 48px; height: 48px; bottom: 62px; right: 32px; }
-
-    @media (max-width: 980px) {
-      .page,
-      .layout,
-      .sidebar,
-      .grid-2,
-      .stat-row {
-        grid-template-columns: 1fr;
-      }
-
-      .hero::before {
-        width: 100%;
-        height: 28%;
-        clip-path: polygon(0 0, 100% 0, 100% 76%, 0 100%);
-      }
-
-      .chapter-nav {
-        position: static;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .page {
-        padding: 12px 10px 40px;
-      }
-
-      .hero,
-      .section,
-      .mini-card,
-      .contact-card {
-        border-radius: 24px;
-      }
-
-      .hero {
-        padding: 22px;
-      }
-
-      .timeline-top {
-        flex-direction: column;
-      }
-
-      .skill-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isabella Ippolito</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0c0c0c; --bg2:#141414; --bg3:#1c1c1c;
+  --border:rgba(255,255,255,0.09); --border-md:rgba(255,255,255,0.15);
+  --border-or:rgba(232,90,30,0.35);
+  --text:#f2ede8; --text-soft:#c8c2ba; --text-muted:#888078;
+  --accent:#e85a1e; --acc-dim:rgba(232,90,30,0.12); --acc-mid:rgba(232,90,30,0.22);
+  --white:#ffffff; --radius:14px; --nav-w:236px; --max:1210px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:"DM Sans",system-ui,sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden;line-height:1.72;font-size:15px;}
+#tech-bg{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.page{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:28px 22px 90px;display:grid;grid-template-columns:var(--nav-w) minmax(0,1fr);gap:24px;align-items:start;}
+.nav{position:sticky;top:24px;border-radius:var(--radius);border:1px solid var(--border-md);background:var(--bg2);overflow:hidden;}
+.nav-bar{height:3px;background:linear-gradient(90deg,var(--accent) 0%,rgba(232,90,30,0.3) 70%,transparent 100%);}
+.nav-inner{padding:22px 22px 0;}
+.nav-kicker{font-size:10px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.nav-name{font-family:"DM Serif Display",serif;font-size:28px;line-height:1.1;color:var(--white);margin-bottom:10px;}
+.nav-role{display:inline-block;padding:5px 13px;border:1px solid var(--border-or);border-radius:3px;color:var(--accent);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.22em;margin-bottom:18px;background:var(--acc-dim);}
+.nav-desc{font-size:13px;color:var(--text-soft);line-height:1.72;padding-bottom:18px;margin-bottom:14px;border-bottom:1px solid var(--border);}
+.nav-links{display:grid;gap:2px;padding:0 10px 20px;}
+.nav-link{display:block;text-decoration:none;padding:9px 12px;border-radius:7px;text-transform:uppercase;letter-spacing:0.16em;font-size:10px;font-weight:700;color:var(--text-muted);transition:background 0.15s,color 0.15s;}
+.nav-link:hover{background:var(--acc-dim);color:var(--accent);}
+.main{min-width:0;display:grid;gap:20px;}
+.hero{position:relative;overflow:hidden;border-radius:var(--radius);padding:42px 46px;background:var(--bg2);border:1px solid var(--border-md);}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent) 0%,rgba(232,90,30,0.35) 65%,transparent 100%);}
+.hero-corner{position:absolute;bottom:0;right:0;}
+.bio-block{margin-bottom:30px;}
+.bio-title{font-family:"DM Serif Display",serif;font-size:24px;color:var(--white);margin-bottom:13px;position:relative;display:inline-block;}
+.bio-title{position:relative;isolation:isolate;}.bio-title::before{content:"";position:absolute;left:-4px;right:-10px;bottom:3px;height:13px;z-index:-1;background:rgba(232,90,30,0.5);border-radius:3px 8px 5px 4px/6px 4px 8px 3px;transform:rotate(-1.2deg) skewX(-4deg);}
+.bio-p{font-size:15px;color:var(--text-soft);line-height:1.88;max-width:680px;}
+.stat-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+.stat{padding:20px 16px;border-radius:10px;text-align:center;background:var(--bg3);border:1px solid var(--border);position:relative;overflow:hidden;}
+.stat::after{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);opacity:0.55;}
+.stat strong{display:block;font-family:"DM Serif Display",serif;font-size:32px;color:var(--accent);margin-bottom:6px;}
+.stat span{font-size:12px;color:var(--text-soft);line-height:1.5;}
+.sec{border-radius:var(--radius);background:var(--bg2);border:1px solid var(--border);padding:32px 36px;}
+.mc{border-radius:var(--radius);background:var(--bg2);border:1px solid var(--border);padding:26px 28px;}
+.stw{margin-bottom:28px;display:flex;align-items:center;gap:16px;}
+.stw::after{content:"";flex:1;height:1px;background:var(--border);}
+.st{font-family:"DM Serif Display",serif;font-size:26px;color:var(--white);display:inline-block;position:relative;isolation:isolate;}
+.st::before{content:"";position:absolute;left:-4px;right:-10px;bottom:3px;height:13px;z-index:-1;background:rgba(232,90,30,0.52);border-radius:3px 8px 5px 4px/6px 4px 8px 3px;transform:rotate(-1.2deg) skewX(-4deg);}
+.mtw{margin-bottom:20px;}
+.mt{font-family:"DM Serif Display",serif;font-size:22px;color:var(--white);display:inline-block;position:relative;isolation:isolate;}
+.mt::before{content:"";position:absolute;left:-3px;right:-8px;bottom:3px;height:11px;z-index:-1;background:rgba(232,90,30,0.48);border-radius:2px 7px 4px 3px/5px 3px 7px 2px;transform:rotate(-1deg) skewX(-3deg);}
+.skills-wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 38px;}
+.sg-head{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.28em;color:var(--accent);margin-bottom:12px;}
+.sg-list{list-style:none;display:grid;gap:8px;}
+.sg-list li{font-size:14px;color:var(--text-soft);padding-left:15px;position:relative;}
+.sg-list li::before{content:"·";position:absolute;left:0;color:var(--accent);font-size:20px;line-height:1;}
+.timeline{display:grid;gap:16px;}
+.tl-item{position:relative;padding:26px 28px 24px 32px;border-radius:12px;background:var(--bg3);border:1px solid var(--border);transition:border-color 0.18s;}
+.tl-item:hover{border-color:var(--border-or);}
+.tl-item::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;border-radius:999px;background:var(--accent);}
+.tl-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:10px;}
+.tl-h{font-family:"DM Serif Display",serif;font-size:22px;color:var(--white);line-height:1.2;margin-bottom:4px;}
+.tl-role{font-size:13px;color:var(--text-muted);font-weight:500;}
+.tl-date{flex-shrink:0;padding:5px 13px;border-radius:4px;background:var(--acc-dim);border:1px solid var(--border-or);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:0.1em;white-space:nowrap;}
+.tl-body{font-size:14px;color:var(--text-soft);line-height:1.85;}
+.tl-label{margin-top:18px;margin-bottom:9px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.28em;color:var(--accent);}
+.proj-stack{display:grid;gap:10px;}
+.pc{padding:16px 18px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);}
+.pc strong{display:block;font-size:14px;font-weight:600;color:var(--white);margin-bottom:6px;}
+.pc p{font-size:13px;color:var(--text-soft);line-height:1.78;}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;}
+.tag{padding:4px 10px;border-radius:4px;background:var(--acc-dim);border:1px solid var(--border-or);color:var(--accent);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;}
+.tl-list{list-style:none;display:grid;gap:7px;margin-top:10px;}
+.tl-list li{font-size:14px;color:var(--text-soft);padding-left:16px;position:relative;line-height:1.75;}
+.tl-list li::before{content:"–";position:absolute;left:0;color:var(--accent);}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.pl{list-style:none;display:grid;gap:10px;}
+.pl li{font-size:14px;color:var(--text-soft);padding-left:16px;position:relative;line-height:1.75;}
+.pl li::before{content:"–";position:absolute;left:0;color:var(--accent);}
+.pl strong{color:var(--white);}
+.award-list{display:grid;gap:12px;}
+.award-item{padding:15px 17px;background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;}
+.award-title{font-size:14px;font-weight:600;color:var(--white);margin-bottom:5px;line-height:1.4;}
+.award-desc{font-size:13px;color:var(--text-soft);line-height:1.7;}
+.ent{color:var(--accent);font-weight:600;font-style:normal;}
+.edu-yr{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.edu-deg{font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.edu-uni{font-size:13px;color:var(--text-muted);margin-bottom:12px;}
+.edu-body{font-size:13px;color:var(--text-soft);line-height:1.78;}
+.edu-body a{color:var(--accent);text-decoration:none;}
+.edu-body a:hover{text-decoration:underline;}
+.contact-list{list-style:none;display:grid;gap:14px;}
+.contact-list li{font-size:14px;}
+.cl-label{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--text-muted);margin-bottom:3px;}
+.contact-list span,.contact-list a{color:var(--text-soft);text-decoration:none;}
+.contact-list a:hover{color:var(--accent);}
+.pp{padding:22px 26px;border-radius:12px;background:var(--bg3);border:1px solid var(--border);}
+.pp strong{display:block;font-size:15px;font-weight:600;color:var(--white);margin-bottom:9px;}
+.pp p{font-size:14px;color:var(--text-soft);line-height:1.85;}
+.pp-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:8px 18px;border-radius:5px;background:var(--acc-dim);border:1px solid var(--border-or);color:var(--accent);font-size:12px;font-weight:700;text-decoration:none;letter-spacing:0.08em;transition:background 0.15s;}
+.pp-link:hover{background:var(--acc-mid);}
+@media(max-width:980px){.page{grid-template-columns:1fr;}.nav{position:static;}.stat-row,.g2{grid-template-columns:1fr;}.skills-wrap{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.page{padding:12px 14px 50px;}.hero{padding:24px;}.tl-top{flex-direction:column;}.skills-wrap{grid-template-columns:1fr;}.sec,.mc{padding:20px;}}
+</style>
 </head>
 <body>
-  <div class="decor" aria-hidden="true">
-    <span class="square s1"></span>
-    <span class="square s2"></span>
-    <span class="square s3"></span>
-    <span class="square s4"></span>
-    <span class="square s5"></span>
-    <span class="square s6"></span>
-  </div>
 
-  <main class="page">
-    <aside class="chapter-nav">
-      <div class="kicker">CV</div>
-      <h2 class="chapter-name">Isabella Ippolito</h2>
-      <div class="chapter-role">Pipeline Developer</div>
-      <p>Pipeline Developer with experience across Houdini, USD, render systems, and production workflows.</p>
-      <nav class="chapter-links">
-        <a class="chapter-link" href="#hero">Intro</a>
-        <a class="chapter-link" href="#experience">Experience</a>
-        <a class="chapter-link" href="#skills">Skills</a>
-        <a class="chapter-link" href="#education">Education</a>
-        <a class="chapter-link" href="#awards">Awards</a>
-        <a class="chapter-link" href="#volunteering">Volunteering</a>
-        <a class="chapter-link" href="#contact">Contact</a>
-      </nav>
-    </aside>
+<svg id="tech-bg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0 L0 0 0 80" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
 
-    <div class="main-column">
-      <section class="hero frame" id="hero">
-        <div class="hero-right">
-        <div class="bio-card">
-          <h2 class="section-title">About Me</h2>
-          <p>
-            I am passionate about developing innovative tools to solve complex challenges and improve
-            pipelines. With experience across Animation, VFX, and Houdini development, I focus on
-            optimizing workflows to enhance creative processes. I am always seeking to improve my skills
-            and learn new things.
-          </p>
-        </div>
+  <!-- ═══ TOP-RIGHT CLUSTER ═══ -->
+  <circle cx="1140" cy="100" r="220" fill="none" stroke="rgba(232,90,30,0.18)" stroke-width="1.5"/>
+  <circle cx="1140" cy="100" r="150" fill="none" stroke="rgba(232,90,30,0.12)" stroke-width="1"/>
+  <circle cx="1140" cy="100" r="80"  fill="none" stroke="rgba(232,90,30,0.18)" stroke-width="1"/>
+  <circle cx="1140" cy="100" r="18"  fill="rgba(232,90,30,0.28)"/>
+  <line x1="1140" y1="-30"  x2="1140" y2="230"  stroke="rgba(232,90,30,0.22)" stroke-width="1"/>
+  <line x1="880"  y1="100"  x2="1400" y2="100"  stroke="rgba(232,90,30,0.22)" stroke-width="1"/>
 
-        <div class="stat-row">
-          <div class="stat">
-            <strong>7+</strong>
-            <span>Years across pipeline, render support, and tool development</span>
+  <!-- ═══ LEFT-MID CLUSTER ═══ -->
+  <circle cx="60"  cy="700" r="180" fill="none" stroke="rgba(232,90,30,0.14)" stroke-width="1.2"/>
+  <circle cx="60"  cy="700" r="110" fill="none" stroke="rgba(232,90,30,0.1)"  stroke-width="0.9"/>
+  <circle cx="60"  cy="700" r="12"  fill="rgba(232,90,30,0.22)"/>
+  <line x1="60"   y1="540"  x2="60"   y2="860"  stroke="rgba(232,90,30,0.18)" stroke-width="0.9"/>
+  <line x1="-80"  y1="700"  x2="220"  y2="700"  stroke="rgba(232,90,30,0.18)" stroke-width="0.9"/>
+
+  <!-- ═══ BOTTOM-RIGHT CLUSTER ═══ -->
+  <circle cx="1100" cy="1800" r="200" fill="none" stroke="rgba(232,90,30,0.15)" stroke-width="1.2"/>
+  <circle cx="1100" cy="1800" r="120" fill="none" stroke="rgba(232,90,30,0.1)"  stroke-width="1"/>
+  <circle cx="1100" cy="1800" r="14"  fill="rgba(232,90,30,0.24)"/>
+
+  <!-- ═══ CENTRE-LEFT CLUSTER ═══ -->
+  <circle cx="80"  cy="1400" r="140" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <circle cx="80"  cy="1400" r="70"  fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
+  <circle cx="80"  cy="1400" r="8"   fill="rgba(255,255,255,0.14)"/>
+
+  <!-- ═══ MID-RIGHT CLUSTER ═══ -->
+  <circle cx="1160" cy="1100" r="160" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <circle cx="1160" cy="1100" r="85"  fill="none" stroke="rgba(232,90,30,0.12)"  stroke-width="0.9"/>
+  <circle cx="1160" cy="1100" r="10"  fill="rgba(232,90,30,0.2)"/>
+
+  <!-- ═══ TRIANGLES ═══ -->
+  <polygon points="60,180 120,280 0,280"     fill="none" stroke="rgba(232,90,30,0.25)" stroke-width="1.5"/>
+  <polygon points="72,200 120,280 24,280"    fill="none" stroke="rgba(232,90,30,0.1)"  stroke-width="0.8"/>
+  <polygon points="1060,380 1130,490 990,490" fill="none" stroke="rgba(232,90,30,0.22)" stroke-width="1.5"/>
+  <polygon points="1072,400 1130,490 1014,490"fill="none" stroke="rgba(232,90,30,0.1)"  stroke-width="0.8"/>
+  <polygon points="200,1600 270,1710 130,1710" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+  <polygon points="900,2100 970,2210 830,2210" fill="none" stroke="rgba(232,90,30,0.18)" stroke-width="1.2"/>
+  <polygon points="1050,600 1110,700 990,700"  fill="none" stroke="rgba(255,255,255,0.1)"  stroke-width="1"/>
+
+  <!-- ═══ DIAGONAL LINES ═══ -->
+  <line x1="0"    y1="350"  x2="200"  y2="0"    stroke="rgba(232,90,30,0.18)" stroke-width="1"/>
+  <line x1="1200" y1="1400" x2="900"  y2="1900" stroke="rgba(232,90,30,0.16)" stroke-width="1"/>
+  <line x1="400"  y1="0"    x2="650"  y2="200"  stroke="rgba(232,90,30,0.14)" stroke-width="0.9"/>
+  <line x1="0"    y1="1000" x2="180"  y2="750"  stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+  <line x1="1200" y1="700"  x2="950"  y2="950"  stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+  <line x1="300"  y1="1200" x2="550"  y2="1000" stroke="rgba(232,90,30,0.12)" stroke-width="0.8"/>
+
+  <!-- ═══ BRACKET SHAPES ═══ -->
+  <path d="M50 450 L20 450 L20 560 L50 560"       fill="none" stroke="rgba(232,90,30,0.28)" stroke-width="1.5"/>
+  <path d="M1170 900 L1200 900 L1200 1010 L1170 1010" fill="none" stroke="rgba(232,90,30,0.22)" stroke-width="1.5"/>
+  <path d="M50 1600 L20 1600 L20 1710 L50 1710"   fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>
+  <path d="M1160 1500 L1190 1500 L1190 1610 L1160 1610" fill="none" stroke="rgba(232,90,30,0.18)" stroke-width="1.2"/>
+
+  <!-- ═══ ROTATED SQUARES ═══ -->
+  <rect x="230" y="500"  width="18" height="18" fill="none" stroke="rgba(232,90,30,0.3)"   stroke-width="1.2" transform="rotate(22 239 509)"/>
+  <rect x="980" y="220"  width="14" height="14" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"   transform="rotate(38 987 227)"/>
+  <rect x="150" y="1100" width="20" height="20" fill="none" stroke="rgba(232,90,30,0.24)"  stroke-width="1.2" transform="rotate(15 160 1110)"/>
+  <rect x="1050" y="1350" width="16" height="16" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"  transform="rotate(45 1058 1358)"/>
+  <rect x="600" y="1700" width="22" height="22" fill="none" stroke="rgba(232,90,30,0.2)"   stroke-width="1"   transform="rotate(30 611 1711)"/>
+  <rect x="400" y="800"  width="12" height="12" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"   transform="rotate(20 406 806)"/>
+
+  <!-- ═══ SCATTERED DOTS ═══ -->
+  <circle cx="350"  cy="160"  r="4" fill="rgba(232,90,30,0.4)"/>
+  <circle cx="780"  cy="320"  r="3" fill="rgba(255,255,255,0.18)"/>
+  <circle cx="500"  cy="900"  r="4" fill="rgba(232,90,30,0.32)"/>
+  <circle cx="160"  cy="1250" r="3" fill="rgba(255,255,255,0.16)"/>
+  <circle cx="900"  cy="1500" r="4" fill="rgba(232,90,30,0.28)"/>
+  <circle cx="700"  cy="1900" r="3" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1050" cy="480"  r="4" fill="rgba(232,90,30,0.35)"/>
+  <circle cx="250"  cy="1900" r="3" fill="rgba(232,90,30,0.26)"/>
+
+  <!-- ═══ SQUIGGLE BRUSHSTROKES ═══ -->
+  <path d="M20 600 Q80 570 140 600 Q200 630 260 600" fill="none" stroke="rgba(232,90,30,0.22)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M980 150 Q1020 130 1060 150 Q1100 170 1140 150" fill="none" stroke="rgba(232,90,30,0.2)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M100 1800 Q160 1775 220 1800 Q280 1825 340 1800" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M900 1050 Q950 1030 1000 1050 Q1050 1070 1100 1050" fill="none" stroke="rgba(232,90,30,0.18)" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+
+<main class="page">
+
+  <aside class="nav">
+    <div class="nav-bar"></div>
+    <div class="nav-inner">
+      <div class="nav-name">Isabella Ippolito</div>
+      <div class="nav-role">Pipeline TD</div>
+      <p class="nav-desc">Pipeline Developer with experience across Houdini, USD, render systems, and production workflows.</p>
+    </div>
+    <nav class="nav-links">
+      <a class="nav-link" href="#hero">Intro</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#experience">Experience</a>
+      <a class="nav-link" href="#certs">Certificates</a>
+      <a class="nav-link" href="#awards">Awards</a>
+      <a class="nav-link" href="#summary">Summary</a>
+      <a class="nav-link" href="#volunteering">Volunteering</a>
+      <a class="nav-link" href="#education">Education</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <a class="nav-link" href="#projects">Personal Projects</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+    <section class="hero" id="hero">
+      <svg class="hero-corner" width="90" height="90" viewBox="0 0 90 90" fill="none">
+        <polygon points="90,0 90,90 0,90" fill="rgba(232,90,30,0.08)"/>
+        <polygon points="90,22 90,90 22,90" fill="none" stroke="rgba(232,90,30,0.22)" stroke-width="1"/>
+      </svg>
+      <div class="bio-block">
+        <div class="bio-title">About Me</div>
+        <p class="bio-p">I am passionate about developing innovative tools to solve complex challenges and improve pipelines. With experience across Animation, VFX, and Houdini development, I focus on optimizing workflows to enhance creative processes. I am always seeking to improve my skills and learn new things.</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><strong>7+</strong><span>Years across pipeline, render support, and tool development</span></div>
+        <div class="stat"><strong>VFX</strong><span>Animation, Houdini pipelines, procedural assets, and workflow tooling</span></div>
+        <div class="stat"><strong>Teams</strong><span>Artists, developers, wranglers, and technical production support</span></div>
+      </div>
+    </section>
+
+    <section class="sec" id="skills">
+      <div class="stw"><h2 class="st">Skills</h2></div>
+      <div class="skills-wrap">
+        <div><div class="sg-head">Programming</div><ul class="sg-list"><li>Python</li><li>VEX</li><li>PySide</li><li>C++</li></ul></div>
+        <div><div class="sg-head">Systems &amp; Pipelines</div><ul class="sg-list"><li>USD</li><li>PDG / TOPs</li><li>Render farms</li></ul></div>
+        <div><div class="sg-head">AI / ML</div><ul class="sg-list"><li>ONNX</li><li>ML prototyping</li><li>LLM-based tools</li></ul></div>
+        <div><div class="sg-head">DCC &amp; Tools</div><ul class="sg-list"><li>Houdini</li><li>Maya</li><li>Nuke</li><li>ShotGrid</li><li>Deadline</li></ul></div>
+        <div><div class="sg-head">Concepts</div><ul class="sg-list"><li>Automation</li><li>Distributed workloads</li><li>Pipeline architecture</li><li>Workflow optimization</li></ul></div>
+        <div><div class="sg-head">Soft Skills</div><ul class="sg-list"><li>Collaboration &amp; Cross-Functional Teamwork</li><li>Time Management &amp; Fast-Paced Delivery</li><li>Leadership &amp; Mentoring</li><li>Agile Planning (MoSCoW)</li><li>Proactive Problem-Solving</li><li>Ownership &amp; Initiative</li><li>Analytical Thinking</li></ul></div>
+      </div>
+    </section>
+
+    <section class="sec" id="experience">
+      <div class="stw"><h2 class="st">Work Experience</h2></div>
+      <div class="timeline">
+
+        <article class="tl-item">
+          <div class="tl-top">
+            <div><div class="tl-h">Pipeline Technical Director</div><div class="tl-role">Pixomondo | London</div></div>
+            <div class="tl-date">2025 – Present</div>
           </div>
-          <div class="stat">
-            <strong>VFX</strong>
-            <span>Animation, Houdini pipelines, procedural assets, and workflow tooling</span>
+          <p class="tl-body">Supporting fast-paced TV shows and film productions by collaborating across the full pipeline with artists and developers. Worked in a generalist Pipeline Support TD role, utilizing DCC tools such as Maya, Houdini, Nuke, and 3DEqualizer alongside custom software to maintain efficient workflows.</p>
+          <div class="tl-label">Responsibilities</div>
+          <div class="proj-stack">
+            <div class="pc"><strong>Day-to-day show support</strong><p>Provide pipeline support across 3D and 2D tools, maintaining show-based tools and delivering smaller features as production needs evolve.</p></div>
+            <div class="pc"><strong>Technical problem solving &amp; liaison</strong><p>Resolve technical issues with department leads and supervisors, acting as the bridge between production teams, artists, and the pipeline.</p></div>
+            <div class="pc"><strong>Code quality &amp; studio standards</strong><p>Conduct and participate in code reviews, give productive feedback to teammates, and follow studio standards for version control, documentation, and testing.</p></div>
           </div>
-          <div class="stat">
-            <strong>Teams</strong>
-            <span>Artists, developers, wranglers, and technical production support</span>
+        </article>
+
+        <article class="tl-item">
+          <div class="tl-top">
+            <div><div class="tl-h">Senior Houdini Developer</div><div class="tl-role">Hogarth – WPP | London</div></div>
+            <div class="tl-date">2025</div>
           </div>
-        </div>
+          <p class="tl-body">Developed custom pipeline tools and procedural workflows in SideFX Houdini to support multiple fast-paced advertising productions. Collaborated closely with artists and other developers to identify pipeline bottlenecks and implement efficient solutions.</p>
+          <div class="tl-label">Selected Projects</div>
+          <div class="proj-stack">
+            <div class="pc"><strong>Houdini pipeline tooling for high-speed advertising delivery</strong><p>Built procedural Houdini tools and workflow improvements for multiple productions, helping artists move faster while reducing friction between creative and technical teams.</p><div class="tag-row"><span class="tag">Houdini</span><span class="tag">Python</span><span class="tag">Pipeline</span></div></div>
+            <div class="pc"><strong>Solaris and USD lighting workflow support</strong><p>Contributed to lighting workflows in Houdini Solaris with a focus on scene optimization, USD integration, and smoother handoff between departments.</p><div class="tag-row"><span class="tag">Solaris</span><span class="tag">USD</span><span class="tag">Lighting</span></div></div>
+            <div class="pc"><strong>Render orchestration with Deadline and TOPs</strong><p>Managed automated render submission, troubleshooting, and resource allocation through Deadline and TOPs to help teams deliver work on schedule.</p><div class="tag-row"><span class="tag">Deadline</span><span class="tag">TOPs</span><span class="tag">Automation</span></div></div>
+          </div>
+        </article>
+
+        <article class="tl-item">
+          <div class="tl-top">
+            <div><div class="tl-h">Procedural Assets &amp; FX Technical Director</div><div class="tl-role">Netflix Animation Studios / Animal Logic | Sydney</div></div>
+            <div class="tl-date">2023 – 2025</div>
+          </div>
+          <p class="tl-body">Developed tools in SideFX Houdini and supported artists for Character FX, Crowds, Modelling, and Surfacing in an advanced USD and Solaris pipeline.</p>
+          <div class="tl-label">Selected Projects</div>
+          <div class="proj-stack">
+            <div class="pc"><strong>Houdini TOP Python Custom Scheduler for the Animal Logic farm</strong><p>Implemented a custom PDG scheduler to submit and manage jobs on the studio farm, handling work items, dependencies, batching, scheduler callbacks, and farm-side support for PDG logic.</p><div class="tag-row"><span class="tag">Houdini</span><span class="tag">PDG</span><span class="tag">TOPs</span><span class="tag">Python</span></div></div>
+            <div class="pc"><strong>Machine learning muscle deformer for CharFX</strong><p>Developed a Houdini 20 workflow using PDG and ONNX to wrap muscle and bone logic into a custom environment and HDA that outputs linear blend skinning for character workflows.</p><div class="tag-row"><span class="tag">CharFX</span><span class="tag">ONNX</span><span class="tag">PDG</span><span class="tag">Houdini 20</span></div></div>
+            <div class="pc"><strong>Texture Library Input/Output HDA</strong><p>Built a SOP HDA with COPS, ROPS, TOPS, and VEX to convert Houdini attributes or groups into texture assets for a global library, with import support directly from the UI.</p><div class="tag-row"><span class="tag">COPS</span><span class="tag">ROPS</span><span class="tag">TOPS</span><span class="tag">VEX</span></div></div>
+            <div class="pc"><strong>Contact Sheet Generator for review workflows</strong><p>Created a ROP HDA that turns review inputs or files on disk into line-up renders with comments and tile-level review context for faster approvals.</p><div class="tag-row"><span class="tag">ROP HDA</span><span class="tag">Review Tools</span><span class="tag">Automation</span></div></div>
+            <div class="pc"><strong>Platform update tests and artist tool support</strong><p>Implemented HOM and Python-based tests for FX workflows and provided ongoing support for SOP, LOP, ROP, and TOP tooling, including turntables, resolvers, knitting, groom tools, and other proprietary workflows.</p><div class="tag-row"><span class="tag">HOM</span><span class="tag">SOP</span><span class="tag">LOP</span><span class="tag">ROP</span><span class="tag">TOP</span></div></div>
+          </div>
+        </article>
+
+        <article class="tl-item">
+          <div class="tl-top">
+            <div><div class="tl-h">Performance Technical Director</div><div class="tl-role">Netflix Animation Studios / Animal Logic | Sydney</div></div>
+            <div class="tl-date">2022 – 2023</div>
+          </div>
+          <p class="tl-body">Developed tools and supported shows in the Performance department for Layout, Animation, and Editorial, mainly using Maya and proprietary tools in an advanced USD-based pipeline integrated with a custom database.</p>
+          <div class="tl-label">Selected Projects</div>
+          <div class="proj-stack">
+            <div class="pc"><strong>Automated character pose loading in Maya</strong><p>Built tools to automate pose loading during shot build workflows, reducing repetitive setup work for production teams.</p><div class="tag-row"><span class="tag">Maya</span><span class="tag">Animation</span><span class="tag">Tooling</span></div></div>
+            <div class="pc"><strong>USD entity setup for layout workflows</strong><p>Changed the USD asset resolver and related triggers to support new entity creation for layout, assets, and shot workflows.</p><div class="tag-row"><span class="tag">USD</span><span class="tag">Layout</span><span class="tag">Pipeline</span></div></div>
+            <div class="pc"><strong>Show support across proprietary tools</strong><p>Supported shot creation, review tooling, and daily production workflows across animation and editorial teams using internal systems.</p><div class="tag-row"><span class="tag">Editorial</span><span class="tag">Shot Creation</span><span class="tag">Support</span></div></div>
+          </div>
+        </article>
+
+        <article class="tl-item">
+          <div class="tl-top">
+            <div><div class="tl-h">Pipeline Technical Director</div><div class="tl-role">Union VFX | London</div></div>
+            <div class="tl-date">2021 – 2022</div>
+          </div>
+          <p class="tl-body">Designed and developed VFX tools and workflows to improve efficiency, fix issues, and support artists. Worked across Nuke, ShotGrid publishing systems, Deadline, Maya, and Houdini inside a VFX production environment.</p>
+          <div class="tl-label">Selected Projects</div>
+          <div class="proj-stack">
+            <div class="pc"><strong>On-set ingest tool with PySide and Deadline</strong><p>Built a production ingest tool to streamline on-set intake and improve early-stage media flow into the pipeline.</p><div class="tag-row"><span class="tag">PySide</span><span class="tag">Deadline</span><span class="tag">Ingest</span></div></div>
+            <div class="pc"><strong>Nuke nodes and ShotGrid publishing for DMP</strong><p>Created custom Nuke nodes and publishing hooks to support the DMP pipeline and improve consistency for artists and editorial teams.</p><div class="tag-row"><span class="tag">Nuke</span><span class="tag">ShotGrid</span><span class="tag">Publishing</span></div></div>
+            <div class="pc"><strong>Farm automation and pipeline transitions</strong><p>Developed Deadline event automations, supported the ShotGrid Config1 to Config2 transition, and contributed to USD, PDG, and ShotGrid publishing workflows in Houdini.</p><div class="tag-row"><span class="tag">Deadline</span><span class="tag">USD</span><span class="tag">PDG</span><span class="tag">Houdini</span></div></div>
+          </div>
+        </article>
+
+        <article class="tl-item">
+          <div class="tl-top">
+            <div><div class="tl-h">Render Wrangler Technical Director</div><div class="tl-role">Union VFX | London</div></div>
+            <div class="tl-date">2019 – 2022</div>
+          </div>
+          <p class="tl-body">Managed and monitored render farm usage in Deadline, troubleshot technical daily errors with artists and the tech department, trained new wranglers, and automated repetitive tasks through scripts.</p>
+          <div class="tl-label">Key Contributions</div>
+          <div class="proj-stack">
+            <div class="pc"><strong>Render farm support and optimization</strong><p>Managed render farm usage in Deadline, resolved technical issues with artists and tech teams, and tested farm performance to improve reliability.</p><div class="tag-row"><span class="tag">Deadline</span><span class="tag">Render Farm</span><span class="tag">Optimization</span></div></div>
+            <div class="pc"><strong>Wrangler leadership and workflow automation</strong><p>Trained and led part-time wranglers while building Python scripts to automate repetitive tasks and improve rendering workflows.</p><div class="tag-row"><span class="tag">Python</span><span class="tag">Leadership</span><span class="tag">Automation</span></div></div>
+          </div>
+        </article>
+
+        <article class="tl-item">
+          <div class="tl-top">
+            <div><div class="tl-h">Video Editor and Motion Designer</div><div class="tl-role">Freelance / Other Jobs | London</div></div>
+            <div class="tl-date">2015 – 2019</div>
+          </div>
+          <p class="tl-body">Produced videos, motion design work, and interactive pieces for campaigns and cultural clients, including NASA at the Kennedy Space Center, Penguin Books, ESA, and other public-facing projects.</p>
+          <div class="tl-label">Selected Clients</div>
+          <ul class="tl-list">
+            <li>The People's Picture including projects for NASA at the Kennedy Space Center Florida, Penguin Books, EY, Jose Cuervo, and Piccadilly Lights.</li>
+            <li>Start Me Up Careers based in Bali.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="g2">
+      <section class="mc" id="certs">
+        <div class="mtw"><h3 class="mt">Certificates</h3></div>
+        <ul class="pl">
+          <li><strong>Artificial Intelligence Foundations Machine Learning</strong>, LinkedIn Learning, 2022.</li>
+          <li><strong>Animated Women UK The Helen North Achieve Programme</strong>, 2021.</li>
+          <li><strong>Next Gen Futures VFX Bootcamp</strong>, industry-backed training across the VFX sector sponsored by the Mayor of London.</li>
+          <li><strong>Italian Exam State Diploma in Chemistry and Biology</strong>, grade 100/100.</li>
+          <li><strong>ECDL European Computer Driving Licence</strong>.</li>
+          <li><strong>IELTS International English Language Testing</strong>, Kaplan English School, New York, USA.</li>
+          <li><strong>ULC School</strong>, Brighton, England.</li>
+          <li><strong>ATC Language School</strong>, Bray, Ireland.</li>
+          <li><strong>ESOL Trinity College</strong>, Levels 4, 5, and 7.</li>
+          <li><strong>DELF</strong>, Diplôme d'études en langue française.</li>
+        </ul>
+      </section>
+      <section class="mc" id="awards">
+        <div class="mtw"><h3 class="mt">Awards</h3></div>
+        <div class="award-list">
+          <div class="award-item"><div class="award-title">Netflix Animation Hackathon 2024 — People's Choice Winner</div><div class="award-desc">Smart Search Engine powered by large language models.</div></div>
+          <div class="award-item"><div class="award-title">Animal Logic Hackathon 2022 — Judge's Choice Winner</div><div class="award-desc">Project Lead: AI Art Generation and Model Creation using production assets as references and trainable concepts.</div></div>
+          <div class="award-item"><div class="award-title">University of Greenwich Awards 2018 — Digital Media Prize</div><div class="award-desc">The Computer and Information System Department Prize for Outstanding Undergraduate Achievement in the Digital Media Programmes.</div></div>
         </div>
       </section>
-
-      <div class="layout">
-        <aside class="sidebar">
-        <section class="section frame" id="skills">
-          <h2 class="section-title">Skills</h2>
-          <div class="skill-grid">
-            <div class="skill-group">
-              <h4>Technical</h4>
-              <ul>
-                <li>Python</li>
-                <li>Houdini</li>
-                <li>ShotGrid / Flow</li>
-                <li>Deadline</li>
-                <li>Thinkbox</li>
-                <li>Maya Autodesk</li>
-                <li>USD</li>
-                <li>Nuke</li>
-              </ul>
-            </div>
-            <div class="skill-group">
-              <h4>Soft</h4>
-              <ul>
-                <li>Team Work</li>
-                <li>Time Management</li>
-                <li>Leadership</li>
-                <li>Planning</li>
-                <li>Agile Methodology and MoSCoW</li>
-                <li>Proactivity</li>
-                <li>Motivated</li>
-                <li>Problem Solving</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="section frame" id="education">
-          <h2 class="section-title">Education</h2>
-          <div class="education-card">
-            <strong>2015 - 2018</strong>
-            <p><strong>BSc Creative Digital Media - First Class Honours</strong></p>
-            <p>University of Greenwich, London</p>
-            <p>
-              Digital Media Design, Digital Media Computing and Programming, Games Design and Development,
-              Visual Storytelling, Professionalism in Digital Media Industries, 3D Animation, Installation Development Project,
-              Digital Media Production, Advanced 3D Animation, User Interface Design, and Interaction Design.
-            </p>
-            <p>
-              Final Year Project: Advection of Fluids Simulations using Houdini
-              (<a href="https://tinyurl.com/ybgrzsm7">https://tinyurl.com/ybgrzsm7</a>).
-            </p>
-          </div>
-        </section>
-
-        <section class="section frame" id="contact">
-          <h2 class="section-title">Contact</h2>
-          <ul class="contact-list">
-            <li><strong>Email</strong><br><span>ippolitoisa0@gmail.com</span></li>
-            <li><strong>Phone</strong><br><span>+44 7724 321027</span></li>
-            <li><strong>LinkedIn</strong><br><span><a href="https://www.linkedin.com/in/isabellaippolito/">linkedin.com/in/isabellaippolito</a></span></li>
-            <li><strong>Location</strong><br><span>London, UK</span></li>
-          </ul>
-        </section>
-        </aside>
-
-        <section class="content">
-        <section class="section frame" id="experience">
-          <h2 class="section-title">Work Experience</h2>
-          <div class="timeline">
-            <article class="timeline-item">
-              <div class="timeline-top">
-                <div>
-                  <h3>Pipeline Technical Director</h3>
-                  <div class="timeline-role">Pixomondo | London</div>
-                </div>
-                <div class="timeline-date">2025 - Present</div>
-              </div>
-              <p>
-                Supporting fast-paced TV shows and film productions by collaborating across the full pipeline
-                with artists and developers. Worked in a generalist Pipeline Support TD role, utilizing DCC tools
-                such as Maya, Houdini, Nuke, and 3DEqualizer alongside custom software to maintain efficient workflows.
-                Proactively resolved priority issues to ensure production remained unblocked and on schedule.
-              </p>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-top">
-                <div>
-                  <h3>Senior Houdini Developer</h3>
-                  <div class="timeline-role">Hogarth - WPP | London</div>
-                </div>
-                <div class="timeline-date">2025</div>
-              </div>
-              <p>
-                Developed custom pipeline tools and procedural workflows in SideFX Houdini to support multiple
-                fast-paced advertising productions. Collaborated closely with artists and other developers to
-                identify pipeline bottlenecks and implement efficient solutions.
-              </p>
-              <div class="project-label">Selected Projects</div>
-              <div class="project-stack">
-                <div class="project-card">
-                  <strong>Houdini pipeline tooling for high-speed advertising delivery</strong>
-                  <p>Built procedural Houdini tools and workflow improvements for multiple productions, helping artists move faster while reducing friction between creative and technical teams.</p>
-                  <div class="tag-row">
-                    <span class="tag">Houdini</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">Pipeline</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <strong>Solaris and USD lighting workflow support</strong>
-                  <p>Contributed to lighting workflows in Houdini Solaris with a focus on scene optimization, USD integration, and smoother handoff between departments.</p>
-                  <div class="tag-row">
-                    <span class="tag">Solaris</span>
-                    <span class="tag">USD</span>
-                    <span class="tag">Lighting</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <strong>Render orchestration with Deadline and TOPs</strong>
-                  <p>Managed automated render submission, troubleshooting, and resource allocation through Deadline and TOPs to help teams deliver work on schedule.</p>
-                  <div class="tag-row">
-                    <span class="tag">Deadline</span>
-                    <span class="tag">TOPs</span>
-                    <span class="tag">Automation</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-top">
-                <div>
-                  <h3>Procedural Assets and FX Technical Director</h3>
-                  <div class="timeline-role">Netflix Animation Studios / Animal Logic | Sydney</div>
-                </div>
-                <div class="timeline-date">2023 - 2025</div>
-              </div>
-              <p>
-                Developed tools in SideFX Houdini and supported artists for Character FX, Crowds, Modelling,
-                and Surfacing in an advanced USD and Solaris pipeline.
-              </p>
-              <div class="project-label">Selected Projects</div>
-              <div class="project-stack">
-                <div class="project-card">
-                  <strong>Houdini TOP Python Custom Scheduler for the Animal Logic farm</strong>
-                  <p>Implemented a custom PDG scheduler to submit and manage jobs on the studio farm, handling work items, dependencies, batching, scheduler callbacks, and farm-side support for PDG logic.</p>
-                  <div class="tag-row">
-                    <span class="tag">Houdini</span>
-                    <span class="tag">PDG</span>
-                    <span class="tag">TOPs</span>
-                    <span class="tag">Python</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <strong>Machine learning muscle deformer for CharFX</strong>
-                  <p>Developed a Houdini 20 workflow using PDG and ONNX to wrap muscle and bone logic into a custom environment and HDA that outputs linear blend skinning for character workflows.</p>
-                  <div class="tag-row">
-                    <span class="tag">CharFX</span>
-                    <span class="tag">ONNX</span>
-                    <span class="tag">PDG</span>
-                    <span class="tag">Houdini 20</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <strong>Texture Library Input/Output HDA</strong>
-                  <p>Built a SOP HDA with COPS, ROPS, TOPS, and VEX to convert Houdini attributes or groups into texture assets for a global library, with import support directly from the UI.</p>
-                  <div class="tag-row">
-                    <span class="tag">COPS</span>
-                    <span class="tag">ROPS</span>
-                    <span class="tag">TOPS</span>
-                    <span class="tag">VEX</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <strong>Contact Sheet Generator for review workflows</strong>
-                  <p>Created a ROP HDA that turns review inputs or files on disk into line-up renders with comments and tile-level review context for faster approvals.</p>
-                  <div class="tag-row">
-                    <span class="tag">ROP HDA</span>
-                    <span class="tag">Review Tools</span>
-                    <span class="tag">Automation</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <strong>Platform update tests and artist tool support</strong>
-                  <p>Implemented HOM and Python-based tests for FX workflows and provided ongoing support for SOP, LOP, ROP, and TOP tooling, including turntables, resolvers, knitting, groom tools, and other proprietary workflows.</p>
-                  <div class="tag-row">
-                    <span class="tag">HOM</span>
-                    <span class="tag">SOP</span>
-                    <span class="tag">LOP</span>
-                    <span class="tag">ROP</span>
-                    <span class="tag">TOP</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-top">
-                <div>
-                  <h3>Performance Technical Director</h3>
-                  <div class="timeline-role">Netflix Animation Studios / Animal Logic | Sydney</div>
-                </div>
-                <div class="timeline-date">2022 - 2023</div>
-              </div>
-              <p>
-                Developed tools and supported shows in the Performance department for Layout, Animation, and Editorial,
-                mainly using Maya and proprietary tools in an advanced USD-based pipeline integrated with a custom database.
-              </p>
-              <div class="project-label">Selected Projects</div>
-              <div class="project-stack">
-                <div class="project-card">
-                  <strong>Automated character pose loading in Maya</strong>
-                  <p>Built tools to automate pose loading during shot build workflows, reducing repetitive setup work for production teams.</p>
-                  <div class="tag-row">
-                    <span class="tag">Maya</span>
-                    <span class="tag">Animation</span>
-                    <span class="tag">Tooling</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <strong>USD entity setup for layout workflows</strong>
-                  <p>Changed the USD asset resolver and related triggers to support new entity creation for layout, assets, and shot workflows.</p>
-                  <div class="tag-row">
-                    <span class="tag">USD</span>
-                    <span class="tag">Layout</span>
-                    <span class="tag">Pipeline</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <strong>Show support across proprietary tools</strong>
-                  <p>Supported shot creation, review tooling, and daily production workflows across animation and editorial teams using internal systems.</p>
-                  <div class="tag-row">
-                    <span class="tag">Editorial</span>
-                    <span class="tag">Shot Creation</span>
-                    <span class="tag">Support</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-top">
-                <div>
-                  <h3>Pipeline Technical Director</h3>
-                  <div class="timeline-role">Union VFX | London</div>
-                </div>
-                <div class="timeline-date">2021 - 2022</div>
-              </div>
-              <p>
-                Designed and developed VFX tools and workflows to improve efficiency, fix issues, and support artists.
-                Worked across Nuke, ShotGrid publishing systems, Deadline, Maya, and Houdini inside a VFX production environment.
-              </p>
-              <div class="project-label">Selected Projects</div>
-              <div class="project-stack">
-                <div class="project-card">
-                  <strong>On-set ingest tool with PySide and Deadline</strong>
-                  <p>Built a production ingest tool to streamline on-set intake and improve early-stage media flow into the pipeline.</p>
-                  <div class="tag-row">
-                    <span class="tag">PySide</span>
-                    <span class="tag">Deadline</span>
-                    <span class="tag">Ingest</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <strong>Nuke nodes and ShotGrid publishing for DMP</strong>
-                  <p>Created custom Nuke nodes and publishing hooks to support the DMP pipeline and improve consistency for artists and editorial teams.</p>
-                  <div class="tag-row">
-                    <span class="tag">Nuke</span>
-                    <span class="tag">ShotGrid</span>
-                    <span class="tag">Publishing</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <strong>Farm automation and pipeline transitions</strong>
-                  <p>Developed Deadline event automations, supported the ShotGrid Config1 to Config2 transition, and contributed to USD, PDG, and ShotGrid publishing workflows in Houdini.</p>
-                  <div class="tag-row">
-                    <span class="tag">Deadline</span>
-                    <span class="tag">USD</span>
-                    <span class="tag">PDG</span>
-                    <span class="tag">Houdini</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-top">
-                <div>
-                  <h3>Render Wrangler Technical Director</h3>
-                  <div class="timeline-role">Union VFX | London</div>
-                </div>
-                <div class="timeline-date">2019 - 2022</div>
-              </div>
-              <p>
-                Managed and monitored render farm usage in Deadline, troubleshot technical daily errors with
-                artists and the tech department, trained new wranglers, and automated repetitive tasks through scripts.
-              </p>
-              <div class="project-label">Key Contributions</div>
-              <div class="project-stack">
-                <div class="project-card">
-                  <strong>Render farm support and optimization</strong>
-                  <p>Managed render farm usage in Deadline, resolved technical issues with artists and tech teams, and tested farm performance to improve reliability.</p>
-                  <div class="tag-row">
-                    <span class="tag">Deadline</span>
-                    <span class="tag">Render Farm</span>
-                    <span class="tag">Optimization</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <strong>Wrangler leadership and workflow automation</strong>
-                  <p>Trained and led part-time wranglers while building Python scripts to automate repetitive tasks and improve rendering workflows.</p>
-                  <div class="tag-row">
-                    <span class="tag">Python</span>
-                    <span class="tag">Leadership</span>
-                    <span class="tag">Automation</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-top">
-                <div>
-                  <h3>Video Editor and Motion Designer</h3>
-                  <div class="timeline-role">Freelance / Other Jobs | London</div>
-                </div>
-                <div class="timeline-date">2015 - 2019</div>
-              </div>
-              <p>
-                Produced videos, motion design work, and interactive pieces for campaigns and cultural clients,
-                including NASA at the Kennedy Space Center, Penguin Books, ESA, and other public-facing projects.
-              </p>
-              <div class="project-label">Selected Clients</div>
-              <ul>
-                <li>The People's Picture including projects for NASA at the Kennedy Space Center Florida, Penguin Books, EY, Jose Cuervo, and Piccadilly Lights.</li>
-                <li>Start Me Up Careers based in Bali.</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <div class="grid-2">
-          <section class="mini-card frame">
-            <h2 class="section-title">Certificates</h2>
-            <ul class="cert-list">
-              <li><strong>Artificial Intelligence Foundations Machine Learning</strong>, LinkedIn Learning, 2022.</li>
-              <li><strong>Animated Women UK The Helen North Achieve Programme</strong>, 2021.</li>
-              <li><strong>Next Gen Futures VFX Bootcamp</strong>, industry-backed training across the VFX sector sponsored by the Mayor of London.</li>
-              <li><strong>Italian Exam State Diploma in Chemistry and Biology</strong>, grade 100/100.</li>
-              <li><strong>ECDL European Computer Driving Licence</strong>.</li>
-              <li><strong>IELTS International English Language Testing</strong>, Kaplan English School, New York, USA.</li>
-              <li><strong>ULC School</strong>, Brighton, England.</li>
-              <li><strong>ATC Language School</strong>, Bray, Ireland.</li>
-              <li><strong>ESOL Trinity College</strong>, Levels 4, 5, and 7.</li>
-              <li><strong>DELF</strong>, Diplome d'etudes en langue francaise.</li>
-            </ul>
-          </section>
-
-          <section class="mini-card frame" id="awards">
-            <h2 class="section-title">Awards</h2>
-            <ul class="award-list">
-              <li><strong>Netflix Animation Hackathon 2024 People's Choice Winner</strong></li>
-              <li>Smart Search Engine powered by large language models.</li>
-              <li><strong>Animal Logic Hackathon 2022 Judge's Choice Winner</strong></li>
-              <li>Project Lead: AI Art Generation and Model Creation using production assets as references and trainable concepts.</li>
-              <li><strong>University of Greenwich Awards 2018 Digital Media Prize</strong></li>
-              <li>The Computer and Information System Department Prize for Outstanding Undergraduate Achievement in the Digital Media Programmes.</li>
-            </ul>
-          </section>
-        </div>
-
-        <div class="grid-2">
-          <section class="mini-card frame">
-            <h2 class="section-title">Summary Highlights</h2>
-            <ul class="summary-list">
-              <li>Pipeline support across Maya, Houdini, Nuke, ShotGrid, Deadline, Solaris, USD and PDG.</li>
-              <li>Built artist-facing tools spanning automation, validation, publishing, and render workflows.</li>
-              <li>Worked with global production teams in feature animation, VFX, and procedural pipeline environments.</li>
-            </ul>
-          </section>
-
-          <section class="mini-card frame" id="volunteering">
-            <h2 class="section-title">Volunteering</h2>
-            <ul class="volunteer-list">
-              <li>Mentor at University of Greenwich (2025 - Present).</li>
-              <li>Mentor at Animated Women UK (2022 - Present).</li>
-              <li>SIGGRAPH Asia Empowering Women in Technology Birds of a Feather panel speaker and organizer (2023).</li>
-              <li>Mentor at University Technology Sydney Women in Engineering and IT (2024).</li>
-              <li>Volunteer usher at the Greenwich Theatre</li>
-            </ul>
-          </section>
-        </div>
-        </section>
-      </div>
     </div>
-  </main>
+
+    <div class="g2">
+      <section class="mc" id="summary">
+        <div class="mtw"><h3 class="mt">Summary Highlights</h3></div>
+        <ul class="pl">
+          <li>Pipeline support across Maya, Houdini, Nuke, ShotGrid, Deadline, Solaris, USD and PDG.</li>
+          <li>Built artist-facing tools spanning automation, validation, publishing, and render workflows.</li>
+          <li>Worked with global production teams in feature animation, VFX, and procedural pipeline environments.</li>
+        </ul>
+      </section>
+      <section class="mc" id="volunteering">
+        <div class="mtw"><h3 class="mt">Volunteering</h3></div>
+        <ul class="pl">
+          <li>Mentor at <em class="ent">University of Greenwich</em> (2025 – Present).</li>
+          <li>Mentor at <em class="ent">Animated Women UK</em> (2022 – Present).</li>
+          <li><em class="ent">SIGGRAPH Asia</em> Empowering Women in Technology Birds of a Feather panel speaker and organizer (2023).</li>
+          <li>Mentor at <em class="ent">University of Technology Sydney</em> Women in Engineering and IT (2024).</li>
+          <li>Volunteer usher at the <em class="ent">Greenwich Theatre</em>.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="g2">
+      <section class="mc" id="education">
+        <div class="mtw"><h3 class="mt">Education</h3></div>
+        <div class="edu-yr">2015 – 2018</div>
+        <div class="edu-deg">BSc Creative Digital Media — First Class Honours</div>
+        <div class="edu-uni">University of Greenwich, London</div>
+        <p class="edu-body">Digital Media Design, Computing and Programming, Games Design and Development, Visual Storytelling, 3D Animation, Installation Development, Advanced 3D Animation, User Interface Design, and Interaction Design.</p>
+        <p class="edu-body" style="margin-top:10px;">Final Year Project: Advection of Fluids Simulations using Houdini (<a href="https://tinyurl.com/ybgrzsm7" target="_blank" rel="noopener">tinyurl.com/ybgrzsm7</a>).</p>
+      </section>
+      <section class="mc" id="contact">
+        <div class="mtw"><h3 class="mt">Contact</h3></div>
+        <ul class="contact-list">
+          <li><span class="cl-label">Email</span><span>ippolitoisa0@gmail.com</span></li>
+          <li><span class="cl-label">Phone</span><span>+44 7724 321027</span></li>
+          <li><span class="cl-label">LinkedIn</span><a href="https://www.linkedin.com/in/isabellaippolito/" target="_blank" rel="noopener">linkedin.com/in/isabellaippolito</a></li>
+          <li><span class="cl-label">Location</span><span>London, UK</span></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="sec" id="projects">
+      <div class="stw"><h2 class="st">Personal Projects</h2></div>
+      <div class="pp">
+        <strong>Fluid Simulation Research — Advection of Fluids in Houdini</strong>
+        <p>An in-depth exploration of fluid dynamics and simulation techniques using SideFX Houdini, developed as a final year university project. The work covers advection algorithms, solver comparisons, and visual results from custom-built fluid setups.</p>
+        <div class="tag-row"><span class="tag">Houdini</span><span class="tag">Fluids</span><span class="tag">Simulation</span><span class="tag">Research</span></div>
+        <a class="pp-link" href="https://drive.google.com/file/d/1gAnCRfrErwSnn349kPhZAiMeVdbBKNks/view" target="_blank" rel="noopener">↗ View Project PDF</a>
+      </div>
+    </section>
+
+  </div>
+</main>
 </body>
 </html>
